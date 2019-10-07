@@ -6,11 +6,8 @@
              mc:Ignorable="d"
              x:Class="ShareYourFood.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
+        <Button Text="SIGN IN" />
+        <Button Text="SIGN IN BY GOOGLE" />
     </StackLayout>
-
 </ContentPage>
