@@ -7,7 +7,8 @@
              x:Class="ShareYourFood.MainPage">
 
     <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
-        <Button Text="SIGN IN" />
-        <Button Text="SIGN IN BY GOOGLE" />
+        <Button Text="SIGN IN" BackgroundColor="#2B1654" TextColor="White" />
+        <Button Text="SIGN UP" BackgroundColor="#2B1654" TextColor="White" />
+        <Button Text="CONTINUE WITHOUT LOGIN" BackgroundColor="#2B1654" TextColor="White" />
     </StackLayout>
 </ContentPage>
