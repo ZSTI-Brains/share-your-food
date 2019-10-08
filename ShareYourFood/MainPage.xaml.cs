@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+
 
 namespace ShareYourFood
 {
@@ -16,6 +18,14 @@ namespace ShareYourFood
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        async void Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Page2
+            {
+                BindingContext = new Page2()
+            });
         }
     }
 }
