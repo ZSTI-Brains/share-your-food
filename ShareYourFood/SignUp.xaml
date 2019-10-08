@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ShareYourFood.SignUp">
+    <ContentPage.Content>
+        <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
+            <Entry Placeholder="Nazwa"/>
+            <Entry Placeholder="Hasło" IsPassword = "True"/>
+            <Entry Placeholder="Powtórz hasło" IsPassword = "True"/>
+            <Entry Placeholder="E-mail" IsPassword = "True"/>
+            <Button Text="Zaloguj" BackgroundColor="#2B1654" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -20,11 +20,19 @@ namespace ShareYourFood
             InitializeComponent();
         }
 
-        async void Clicked(object sender, EventArgs e)
+        async void SignIn(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SignIn
             {
                 BindingContext = new SignIn()
+            });
+        }
+
+        async void SignUp(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUp
+            {
+                BindingContext = new SignUp()
             });
         }
     }
