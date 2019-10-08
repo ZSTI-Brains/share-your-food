@@ -18,6 +18,7 @@ namespace ShareYourFood
         public MainPage()
         {
             InitializeComponent();
+            Title = "Ekran powitalny";
         }
 
         async void SignIn(object sender, EventArgs e)
