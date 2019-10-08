@@ -7,9 +7,12 @@
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
         <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
-            <Entry Placeholder="Nazwa"/>
-            <Entry Placeholder="Hasło" IsPassword = "True"/>
-            <Button Text="Zaloguj" BackgroundColor="#2B1654" TextColor="White"/>
+            <Entry Placeholder="Nazwa" HorizontalTextAlignment="Center" />
+            <Entry Placeholder="Hasło" IsPassword = "True"  HorizontalTextAlignment="Center" />
+            <Button Text="Zaloguj" 
+                    Margin="0,32,0,0"
+                    BackgroundColor="#2B1654" 
+                    TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
