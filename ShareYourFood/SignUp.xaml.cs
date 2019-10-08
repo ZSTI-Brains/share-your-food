@@ -15,7 +15,7 @@ namespace ShareYourFood
         public SignUp()
         {
             InitializeComponent();
-            Title = "Sign in";
+            Title = "Sign up";
         }
     }
 }
