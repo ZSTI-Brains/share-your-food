@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace ShareYourFood
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page2 : ContentPage
+    public partial class SignIn : ContentPage
     {
-        public Page2()
+        public SignIn()
         {
             InitializeComponent();
+            Title = "Sign in";
         }
     }
 }

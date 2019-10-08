@@ -22,9 +22,9 @@ namespace ShareYourFood
 
         async void Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page2
+            await Navigation.PushAsync(new SignIn
             {
-                BindingContext = new Page2()
+                BindingContext = new SignIn()
             });
         }
     }
