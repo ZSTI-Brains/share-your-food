@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="32,32,32,32">
+            <Entry Placeholder="Name"/>
+            <Entry Placeholder="Password" IsPassword = "True"/>
+            <Button Text="Sign-In" BackgroundColor="#2B1654" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
