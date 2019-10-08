@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
-        <StackLayout Padding="32,32,32,32">
-            <Entry Placeholder="Name"/>
-            <Entry Placeholder="Password" IsPassword = "True"/>
-            <Button Text="Sign-In" BackgroundColor="#2B1654" TextColor="White"/>
+        <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
+            <Entry Placeholder="Nazwa"/>
+            <Entry Placeholder="Hasło" IsPassword = "True"/>
+            <Button Text="Zaloguj" BackgroundColor="#2B1654" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
