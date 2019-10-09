@@ -9,13 +9,10 @@
         <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
             <Entry Placeholder="Imię" />
             <Entry Placeholder="Nazwisko" />
-            <Entry Placeholder="Hasło" IsPassword = "True" />
-            <Entry Placeholder="Powtórz hasło" IsPassword = "True" />
-            <Entry Placeholder="E-mail" IsPassword = "True" />
-            <Button Text="ZAREJESTRUJ" 
-                    Margin="0,32,0,0"
-                    BackgroundColor="#2B1654" 
-                    TextColor="White" />
+            <Entry Placeholder="Hasło" IsPassword="True" />
+            <Entry Placeholder="Powtórz hasło" IsPassword="True" />
+            <Entry Placeholder="E-mail" />
+            <Button Text="ZAREJESTRUJ" Margin="0,32,0,0" Style="{StaticResource button}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

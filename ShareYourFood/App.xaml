@@ -6,6 +6,22 @@
              mc:Ignorable="d"
              x:Class="ShareYourFood.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="SSP-Regular">
+                <On Platform="Android" Value="Fonts/SourceSansPro-Regular.ttf#SourceSansPro-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="SSP-Bold">
+                <On Platform="Android" Value="Fonts/SourceSansPro-Bold.ttf#SourceSansPro-Bold" />
+            </OnPlatform>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#2B1654" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="FontFamily" Value="{StaticResource SSP-Bold}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="BackgroundColor" Value="#2B1654" />
+                <Setter Property="BackgroundColor" Value="#2B1654" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
