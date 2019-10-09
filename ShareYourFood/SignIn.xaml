@@ -9,7 +9,7 @@
         <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
             <Entry Placeholder="E-mail" HorizontalTextAlignment="Center" />
             <Entry Placeholder="Hasło" IsPassword = "True"  HorizontalTextAlignment="Center" />
-            <Button Text="Zaloguj" 
+            <Button Text="ZALOGUJ" 
                     Margin="0,32,0,0"
                     BackgroundColor="#2B1654" 
                     TextColor="White" />

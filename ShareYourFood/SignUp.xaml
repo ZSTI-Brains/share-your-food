@@ -12,7 +12,7 @@
             <Entry Placeholder="Hasło" IsPassword = "True" />
             <Entry Placeholder="Powtórz hasło" IsPassword = "True" />
             <Entry Placeholder="E-mail" IsPassword = "True" />
-            <Button Text="Zarejestruj" 
+            <Button Text="ZAREJESTRUJ" 
                     Margin="0,32,0,0"
                     BackgroundColor="#2B1654" 
                     TextColor="White" />

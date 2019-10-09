@@ -7,10 +7,11 @@
              x:Class="ShareYourFood.MainPage">
 
     <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
-        <Button Text="Zaloguj" BackgroundColor="#2B1654" TextColor="White" Clicked="SignIn" />
-        <Button Text="Rejestracja" BackgroundColor="#2B1654" TextColor="White" Clicked="SignUp" />
-        <Button Text="Kontynuuj bez logowania" 
+        <Button Text="LOGOWANIE" BackgroundColor="#2B1654" TextColor="White" CornerRadius="8" FontSize="16" Clicked="SignIn" />
+        <Button Text="REJESTRACJA" BackgroundColor="#2B1654" TextColor="White" CornerRadius="8" FontSize="16" Clicked="SignUp" />
+        <Button Text="Kontynuuj bez logowania." 
                 Margin="0,32,0,0"
+                FontSize="18"
                 BackgroundColor="Transparent" 
                 TextColor="#242424" />
     </StackLayout>
