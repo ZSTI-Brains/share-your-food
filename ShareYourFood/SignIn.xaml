@@ -7,8 +7,8 @@
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
         <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
-            <Entry Placeholder="E-mail" HorizontalTextAlignment="Center" />
-            <Entry Placeholder="Hasło" IsPassword="True"  HorizontalTextAlignment="Center" />
+            <Entry Placeholder="E-mail" Style="{StaticResource entry}" />
+            <Entry Placeholder="Hasło" IsPassword="True" Style="{StaticResource entry}" />
             <Button Text="ZALOGUJ" Margin="0,32,0,0" Style="{StaticResource button}" />
         </StackLayout>
     </ContentPage.Content>
