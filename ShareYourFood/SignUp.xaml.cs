@@ -15,14 +15,7 @@ namespace ShareYourFood
         public SignUp()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            Title = "Zarejestruj się";
-=======
             Title = "Rejestracja";
->>>>>>> d2a47b0a438379e8b47c5ec1b0cbe6e561c301a5
         }
-
-
-
     }
 }

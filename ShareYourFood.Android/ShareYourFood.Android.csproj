@@ -65,6 +65,8 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\SourceSansPro-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\SourceSansPro-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Muli-ExtraBold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Muli-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
