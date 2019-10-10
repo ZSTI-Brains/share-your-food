@@ -51,9 +51,14 @@
     }
     function checkEmail($email) {
         $length = strlen($email);
+        $at = 0;
         for ($i = 0; $i < $length; $i++) {
-            if ($email[$i] == "@")
+            if ($email[$i] == "." && $at == 1)
                 return true;
+            else if ($email[$i] == "@" && $at == 0) {
+                $at++; 
+                $i++;
+            }
         }
         return false;
     }
