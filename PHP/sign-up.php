@@ -6,7 +6,7 @@
 
     $first_name = "Dorian";
     $last_name = "Hanselwield";
-    $email = "email6@email.com";
+    $email = "email6@.";
     $passwd = "AAddd5555";
 
     $query = "SELECT * FROM `users` WHERE `email` = '$email'";
@@ -17,8 +17,8 @@
         else {
             if (checkPassword($passwd) && checkEmail($email)) {
                 $passwd = @crypt($passwd);
-                $query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`) VALUES ('','$first_name', '$last_name', '$passwd','$email')";
-                $mysqli->query($query);
+                //$query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`) VALUES ('','$first_name', '$last_name', '$passwd','$email')";
+                //$mysqli->query($query);
                 echo "Account created successful!";
             }
             else {
@@ -52,6 +52,9 @@
     function checkEmail($email) {
         $length = strlen($email);
         $at = 0;
+        if($email[$length - 1] == ".")
+            return false;
+        
         for ($i = 0; $i < $length; $i++) {
             if ($email[$i] == "." && $at == 1)
                 return true;
