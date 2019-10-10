@@ -7,7 +7,7 @@
 
     if ($result = $mysqli->query($query)) {
         while ($row = $result->fetch_assoc())
-            echo $row["email"] . " " . $row["password"] . " " . $row["first_name"] . " " . $row["last_name"] . "<br>"; 
+            echo json_encode($row); 
 
         $result->free_result();
     }
