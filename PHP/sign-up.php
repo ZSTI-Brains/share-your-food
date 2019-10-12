@@ -3,7 +3,6 @@
 
     $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
-
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
     $email = $_POST["email"];
@@ -17,7 +16,7 @@
         else {
             if (checkPassword($passwd) && checkEmail($email)) {
                 $passwd = @crypt($passwd);
-                $query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`) VALUES ('','$first_name', '$last_name', '$passwd','$email')";
+                $query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`, `points`) VALUES ('','$first_name', '$last_name', '$passwd','$email', '0')";
                 $mysqli->query($query);
                 echo "Account created successful!";
             }
