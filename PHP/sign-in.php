@@ -1,12 +1,13 @@
 <?php
     require_once("db-connection.php");
 
-    $email = "jakub@szaretko.ru";
-    $passwd = "haslo";
+    $email = $_POST["email"];
+    $passwd = $_POST["passwd"];
+    $passwd = @crypt($passwd);
 
     $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
-    $query = "SELECT first_name, last_name, email FROM `users` WHERE `email` = '$email' AND password = '$passwd'";
+    $query = "SELECT first_name, last_name, email, points FROM `users` WHERE `email` = '$email' AND password = '$passwd'";
 
     if ($result = $mysqli->query($query)) {
         if ($result->num_rows > 0) {

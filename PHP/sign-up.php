@@ -4,10 +4,10 @@
     $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
 
-    $first_name = "Dorian";
-    $last_name = "Hanselwield";
-    $email = "email6@ddsad.cdsadas";
-    $passwd = "AAddd5555";
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
+    $email = $_POST["email"];
+    $passwd = $_POST["passwd"];
 
     $query = "SELECT * FROM `users` WHERE `email` = '$email'";
     if ($result = $mysqli->query($query)) {
