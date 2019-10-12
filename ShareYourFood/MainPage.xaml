@@ -4,13 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Style="{StaticResource DefaultPage}"
              NavigationPage.HasNavigationBar="False"
              x:Class="ShareYourFood.MainPage">
 
     <StackLayout Padding="48,48,48,48" VerticalOptions="Center">
         <Image Source="logotype.png" HeightRequest="128" Margin="0,0,0,48" />
-        <Button Text="Logowanie" Clicked="SignIn" Style="{StaticResource button}" />
-        <Button Text="Rejestracja" Clicked="SignUp" Style="{StaticResource button}" />
+        <Button Text="Logowanie" Clicked="SignIn" Style="{StaticResource Button}" />
+        <Button Text="Rejestracja" Clicked="SignUp" Style="{StaticResource Button}" />
         <Button Text="Kontynuuj bez logowania" 
                 Margin="0,32,0,0"
                 FontFamily="{StaticResource DefaultRegular}"

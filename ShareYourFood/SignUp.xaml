@@ -4,15 +4,17 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Style="{StaticResource DefaultPage}"
+             NavigationPage.HasNavigationBar="False"
              x:Class="ShareYourFood.SignUp">
     <ContentPage.Content>
-        <StackLayout Padding="32,32,32,32" VerticalOptions="Center">
-            <Entry Placeholder="Imię" Style="{StaticResource entry}" />
-            <Entry Placeholder="Nazwisko" Style="{StaticResource entry}" />
-            <Entry Placeholder="Hasło" IsPassword="True" Style="{StaticResource entry}" />
-            <Entry Placeholder="Powtórz hasło" IsPassword="True" Style="{StaticResource entry}" />
-            <Entry Placeholder="E-mail" Style="{StaticResource entry}" />
-            <Button Text="ZAREJESTRUJ" Margin="0,32,0,0" Style="{StaticResource button}" />
+        <StackLayout Padding="48,48,48,48" VerticalOptions="Center">
+            <Entry Placeholder="Imię" Style="{StaticResource Entry}" />
+            <Entry Placeholder="Nazwisko" Style="{StaticResource Entry}" />
+            <Entry Placeholder="Hasło" IsPassword="True" Style="{StaticResource Entry}" />
+            <Entry Placeholder="Powtórz hasło" IsPassword="True" Style="{StaticResource Entry}" />
+            <Entry Placeholder="E-mail" Style="{StaticResource Entry}" />
+            <Button Text="Zarejestruj się" Margin="0,32,0,0" Style="{StaticResource Button}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

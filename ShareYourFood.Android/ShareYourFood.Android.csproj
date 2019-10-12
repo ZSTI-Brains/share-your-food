@@ -58,13 +58,12 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Fonts\SourceSansPro-Bold.ttf" />
-    <AndroidAsset Include="Assets\Fonts\SourceSansPro-Regular.ttf" />
     <AndroidAsset Include="Assets\Fonts\Muli-ExtraBold.ttf" />
     <AndroidAsset Include="Assets\Fonts\Muli-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
@@ -89,7 +88,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ShareYourFood\ShareYourFood.csproj">
       <Project>{655035EF-5851-4053-B6F8-11A1C2E76E02}</Project>
@@ -98,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logotype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-v23\styles.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
