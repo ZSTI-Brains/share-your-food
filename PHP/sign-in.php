@@ -5,13 +5,13 @@
 
     $email = $_POST["email"];
     $passwd = $_POST["passwd"];
-    $passwd = @crypt($passwd);
+    $passwd = @password_hash($passwd, PASSWORD_DEFAULT);
 
     $query = "SELECT first_name, last_name, email, points FROM `users` WHERE `email` = '$email' AND password = '$passwd'";
 
     if ($result = $mysqli->query($query)) {
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc(); 
+            $row = $result->fetch_assoc();
             echo json_encode($row);
         }
         else {
@@ -22,5 +22,5 @@
         echo "Connection error!";
     }
 
-    $mysqli->close();  
+    $mysqli->close();
 ?>

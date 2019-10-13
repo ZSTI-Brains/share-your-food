@@ -15,8 +15,8 @@
         }
         else {
             if (checkPassword($passwd) && checkEmail($email)) {
-                $passwd = @crypt($passwd);
-                $query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`, `points`) VALUES ('','$first_name', '$last_name', '$passwd','$email', '0')";
+                $passwd = @password_hash($passwd, PASSWORD_DEFAULT);
+                $query = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `password`, `email`, `points`) VALUES ('', '$first_name', '$last_name', '$passwd', '$email', 0)";
                 $mysqli->query($query);
                 echo "Account created successful!";
             }
@@ -38,11 +38,11 @@
                 else if ($passwd[$i] >= "0" && $passwd[$i] <= "9")
                     $n_letter++;
             }
-            
-            if ($h_letter > 0 && $n_letter > 0) 
+
+            if ($h_letter > 0 && $n_letter > 0)
                 return true;
-            else 
-                return false;    
+            else
+                return false;
         }
         else {
             return false;
