@@ -4,22 +4,23 @@
     $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
     $email = $_POST["email"];
-    $passwd = $_POST["passwd"];
-    $passwd = @password_hash($passwd, PASSWORD_DEFAULT);
+    $passwd = $_POST["password"];
 
-    $query = "SELECT first_name, last_name, email, points FROM `users` WHERE `email` = '$email' AND password = '$passwd'";
+    $query = "SELECT password FROM `users` WHERE `email` = '$email'";
+    $result = $mysqli->query($query);
 
-    if ($result = $mysqli->query($query)) {
-        if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        
+        if (password_verify($passwd, $row["password"])) {
+            $query = "SELECT first_name, last_name, email, points FROM `users` WHERE `email` = '$email'";
+            $result = $mysqli->query($query);
             $row = $result->fetch_assoc();
             echo json_encode($row);
         }
-        else {
-            echo "Incorrect email or password, missing user!";
-        }
     }
     else {
-        echo "Connection error!";
+        echo "Incorrect email or password!";
     }
 
     $mysqli->close();

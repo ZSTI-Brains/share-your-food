@@ -6,7 +6,7 @@
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
     $email = $_POST["email"];
-    $passwd = $_POST["passwd"];
+    $passwd = $_POST["password"];
 
     $query = "SELECT * FROM `users` WHERE `email` = '$email'";
     if ($result = $mysqli->query($query)) {
