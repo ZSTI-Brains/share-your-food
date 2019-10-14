@@ -15,6 +15,7 @@
             </OnPlatform>
             <Style x:Key="DefaultPage" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="#EEEEEE" />
+                <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
             </Style>
             <Style x:Key="Button" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#33D0AA" />

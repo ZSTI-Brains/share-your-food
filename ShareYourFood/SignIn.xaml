@@ -5,15 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Style="{StaticResource DefaultPage}"
-             NavigationPage.HasNavigationBar="False"
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
         <StackLayout Padding="48,48,48,48" VerticalOptions="Center">
-            <Frame IsClippedToBounds="False" Padding="0" Margin="0">
-                <Entry Placeholder="E-mail" Margin="0" Style="{StaticResource Entry}" />
-            </Frame>
-            <Entry Placeholder="Hasło" IsPassword="True" Style="{StaticResource Entry}" />
-            <Button Text="Zaloguj się" Margin="0,32,0,0" Style="{StaticResource Button}" />
+            <Entry x:Name="emailEntry" 
+                   Placeholder="E-mail" 
+                   Style="{StaticResource Entry}" />
+            <Entry x:Name="passwordEntry" 
+                   Placeholder="Hasło" IsPassword="True" 
+                   Style="{StaticResource Entry}" />
+            <Button Text="Zaloguj się" 
+                    Clicked="OnSignIn" 
+                    Margin="0,32,0,0" 
+                    Style="{StaticResource Button}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

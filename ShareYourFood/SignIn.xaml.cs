@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,32 +19,21 @@ namespace ShareYourFood
         {
             InitializeComponent();
             Title = "Logowanie";
-
-            PostRequest("http://www.szaredko.com/share-your-food");
         }
 
-        async static void PostRequest(string url)
+        async void OnSignIn(object sender, EventArgs e)
         {
-            IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>()
+            Dictionary<string, string> values = new Dictionary<string, string>
             {
-                new KeyValuePair<string, string>("email","marcin.gortat@nba.com"),
-                new KeyValuePair<string, string>("password","nbaimissya")
+                { "email", emailEntry.Text },
+                { "password", passwordEntry.Text }
             };
-            HttpContent q = new FormUrlEncodedContent(queries);
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage response = await client.PostAsync(url, q))
-                {
-                    using (HttpContent content = response.Content)
-                    {
-                        string mycontent = await content.ReadAsStringAsync();
-                        HttpContentHeaders headers = content.Headers;
 
-                        Console.WriteLine(mycontent);
-                    }
-                }
-            }
+            var content = new FormUrlEncodedContent(values);
+            var client = new HttpClient();
+            var response = await client.PostAsync("https://szaredko.com/share-your-food/sign-in.php", content);
+            var responseString = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseString);
         }
-
     }
 }

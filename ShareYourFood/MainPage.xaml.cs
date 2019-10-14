@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Xamarin.Forms;
 
 
@@ -34,6 +35,14 @@ namespace ShareYourFood
             await Navigation.PushAsync(new SignUp
             {
                 BindingContext = new SignUp()
+            });
+        }
+
+        async void OpenMap(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage
+            {
+                BindingContext = new MapPage()
             });
         }
     }
