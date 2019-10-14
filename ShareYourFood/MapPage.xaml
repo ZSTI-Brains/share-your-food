@@ -9,9 +9,6 @@
              x:Class="ShareYourFood.MapPage">
     <ContentPage.Content>
         <StackLayout>
-            <maps:Map x:Name="MyMap"
-                      WidthRequest="320"
-                      HeightRequest="200" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
