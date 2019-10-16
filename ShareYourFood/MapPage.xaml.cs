@@ -27,6 +27,13 @@ namespace ShareYourFood
                 WidthRequest = 960,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
+            var pin = new Pin()
+            {
+                Type = PinType.Place,
+                Label = "Eating Room",
+                Position = position
+            };
+            map.Pins.Add(pin);
             var stack = new StackLayout { Spacing = 0 };
             stack.Children.Add(map);
             Content = stack;
