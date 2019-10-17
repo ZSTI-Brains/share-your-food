@@ -6,11 +6,6 @@
     $email = $_POST["email"];
     $passwd = $_POST["password"];
 
-    echo "POST: ";
-    print_r($_POST);
-    echo "GET: ";
-    print_r($_GET);
-
     $query = "SELECT password FROM `users` WHERE `email` = '$email'";
     $result = $mysqli->query($query);
 
