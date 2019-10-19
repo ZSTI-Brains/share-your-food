@@ -27,34 +27,27 @@ namespace ShareYourFood
                 WidthRequest = 960,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
-            var pin = new Pin()
+
+            foreach (EatingHouse eh in App.EatingHouses)
             {
-                Type = PinType.Place,
-                Label = "Eating Room",
-                Position = position
-            };
-            map.Pins.Add(pin);
+                position = new Position(eh.latitude, eh.longitude);
+                var pin = new Pin { Label = eh.name, Position = position };
+                map.Pins.Add(pin);
+            }
+
             var stack = new StackLayout { Spacing = 0 };
+            var button = new Button { Text = "LOL" };
+            stack.Children.Add(button);
             stack.Children.Add(map);
             Content = stack;
         }
 
-        async void InitializeAsync()
+        public void SetPins()
         {
-            var location = await Geolocation.GetLocationAsync();
-            var position = new Position(49.673971, 20.079831);
-
-            var map = new Xamarin.Forms.Maps.Map(
-                MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
+            foreach (EatingHouse eh in App.EatingHouses)
             {
-                IsShowingUser = true,
-                HeightRequest = 100,
-                WidthRequest = 960,
-                VerticalOptions = LayoutOptions.FillAndExpand
-            };
-            var stack = new StackLayout { Spacing = 0 };
-            stack.Children.Add(map);
-            Content = stack;
+
+            }
         }
     }
 }

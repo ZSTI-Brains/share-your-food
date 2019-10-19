@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,12 +10,14 @@ namespace ShareYourFood
     public partial class App : Application
     {
         public static string FolderPath { get; private set; }
+        public static IList<EatingHouse> EatingHouses { get; set; }
 
         public App()
         {
             InitializeComponent();
             FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
             MainPage = new NavigationPage(new MainPage());
+            Web.GetHousesInfo("https://szaredko.com/share-your-food/get-eating-houses-info.php");
         }
         
 
