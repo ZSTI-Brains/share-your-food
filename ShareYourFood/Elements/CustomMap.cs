@@ -3,8 +3,11 @@ using Xamarin.Forms.Maps;
 
 namespace ShareYourFood.Elements
 {
-    class CustomMap : Map
+    public class CustomMap : Map
     {
+        public CustomMap() : base() { }
+        public CustomMap(MapSpan ms) : base(ms) { }
+
         public IList<CustomPin> CustomPins { get; set; }
     }
 }

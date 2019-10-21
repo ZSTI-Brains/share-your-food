@@ -9,6 +9,8 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
 
+using ShareYourFood.Elements;
+
 namespace ShareYourFood
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,7 +23,7 @@ namespace ShareYourFood
             InitializeComponent();
             var position = new Position(19.673971, 20.079831);
 
-            map = new Xamarin.Forms.Maps.Map(
+            map = new CustomMap(
                 MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
             {
                 IsShowingUser = true,
