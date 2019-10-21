@@ -14,12 +14,14 @@ namespace ShareYourFood
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MapPage : ContentPage
     {
+        public Xamarin.Forms.Maps.Map map;
+
         public MapPage()
         {
             InitializeComponent();
-            var position = new Position(49.673971, 20.079831);
+            var position = new Position(19.673971, 20.079831);
 
-            var map = new Xamarin.Forms.Maps.Map(
+            map = new Xamarin.Forms.Maps.Map(
                 MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
             {
                 IsShowingUser = true,
@@ -40,14 +42,15 @@ namespace ShareYourFood
             stack.Children.Add(button);
             stack.Children.Add(map);
             Content = stack;
+            GetLocation();
         }
 
-        public void SetPins()
+        public async void GetLocation()
         {
-            foreach (EatingHouse eh in App.EatingHouses)
-            {
-
-            }
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            var position = new Position(location.Latitude, location.Longitude);
+            Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(2.5)));
         }
     }
 }
