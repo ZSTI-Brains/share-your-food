@@ -35,12 +35,12 @@ namespace ShareYourFood
             foreach (EatingHouse eh in App.EatingHouses)
             {
                 position = new Position(eh.latitude, eh.longitude);
-                var pin = new Pin { Label = eh.name, Position = position };
+                var pin = new Pin { Label = eh.name, Address = eh.address, Position = position };
                 map.Pins.Add(pin);
             }
 
             var stack = new StackLayout { Spacing = 0 };
-            var button = new Button { Text = "LOL" };
+            var button = new Image { Source = ImageSource.FromFile("logo.png"), WidthRequest = 512 };
             stack.Children.Add(button);
             stack.Children.Add(map);
             Content = stack;
