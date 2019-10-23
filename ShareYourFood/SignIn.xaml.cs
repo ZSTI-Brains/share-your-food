@@ -29,11 +29,10 @@ namespace ShareYourFood
                 { "password", passwordEntry.Text }
             };
 
-            var content = new FormUrlEncodedContent(values);
-            var client = new HttpClient();
-            var response = await client.PostAsync("https://szaredko.com/share-your-food/sign-in.php", content);
-            var responseString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseString);
+            await Web.SignIn(Web.API_URL + "sign-in.php", values);
+
+            if (App.Logged)
+                await Navigation.PushAsync(new MapPage() { BindingContext = new MapPage() });
         }
     }
 }

@@ -28,21 +28,32 @@ namespace ShareYourFood
                 WidthRequest = Application.Current.MainPage.Width,
                 IsShowingUser = true
             };
-
-            foreach (EatingHouse eh in App.EatingHouses)
-            {
-                position = new Position(eh.latitude, eh.longitude);
-                var pin = new Pin { Label = eh.name, Address = eh.address, Position = position };
-                map.Pins.Add(pin);
-            }
-
+            InitPins();       
             GridLayout.Children.Add(map, 0, 1);
             Grid.SetColumnSpan(map, 3);
 
-            var menuButton = new ImageButton { Source = "menu_icon.png", BackgroundColor = Color.Transparent };
-            GridLayout.Children.Add(menuButton, 2, 0);
+            if (App.Logged)
+            {
+                var menuButton = new ImageButton
+                {
+                    Source = "menu_icon.png",
+                    Padding = new Thickness(0, 14),
+                    BackgroundColor = Color.Transparent
+                };
+                GridLayout.Children.Add(menuButton, 2, 0);
+            }
 
             GetLocation();
+        }
+
+        public void InitPins()
+        {
+            foreach (EatingHouse eh in App.EatingHouses)
+            {
+                var position = new Position(eh.latitude, eh.longitude);
+                var pin = new Pin { Label = eh.name, Address = eh.address, Position = position };
+                map.Pins.Add(pin);
+            }
         }
 
         public async void GetLocation()

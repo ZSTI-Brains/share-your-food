@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShareYourFood
+﻿namespace ShareYourFood
 {
     public struct EatingHouse
     {

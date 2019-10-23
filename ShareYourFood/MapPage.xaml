@@ -8,7 +8,7 @@
              Style="{StaticResource DefaultPage}"
              x:Class="ShareYourFood.MapPage">
     <ContentPage.Content>
-        <Grid x:Name="GridLayout" HorizontalOptions="Center">
+        <Grid x:Name="GridLayout" HorizontalOptions="Center" RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />
