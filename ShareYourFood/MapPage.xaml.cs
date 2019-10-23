@@ -23,13 +23,10 @@ namespace ShareYourFood
             InitializeComponent();
             var position = new Position(19.673971, 20.079831);
 
-            map = new CustomMap(
-                MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
+            map = new CustomMap(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
             {
-                IsShowingUser = true,
-                HeightRequest = 100,
-                WidthRequest = 960,
-                VerticalOptions = LayoutOptions.FillAndExpand
+                WidthRequest = Application.Current.MainPage.Width,
+                IsShowingUser = true
             };
 
             foreach (EatingHouse eh in App.EatingHouses)
@@ -39,11 +36,9 @@ namespace ShareYourFood
                 map.Pins.Add(pin);
             }
 
-            var stack = new StackLayout { Spacing = 0 };
-            var button = new Image { Source = ImageSource.FromFile("logo.png"), WidthRequest = 512 };
-            stack.Children.Add(button);
-            stack.Children.Add(map);
-            Content = stack;
+            GridLayout.Children.Add(map, 0, 1);
+            Grid.SetColumnSpan(map, 3);
+
             GetLocation();
         }
 

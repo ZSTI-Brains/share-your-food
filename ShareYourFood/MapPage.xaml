@@ -3,13 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
-             BackgroundColor="#323232"
+             BackgroundColor="#33D0AA"
              Style="{StaticResource DefaultPage}"
              x:Class="ShareYourFood.MapPage">
     <ContentPage.Content>
-        <StackLayout>
-        </StackLayout>
+        <Grid x:Name="GridLayout" HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="48" />
+            </Grid.ColumnDefinitions>
+            <Label Text="SHARE YOUR FOOD"
+                   FontFamily="{StaticResource DefaultExtraBold}"
+                   FontSize="22"
+                   TextColor="White"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
