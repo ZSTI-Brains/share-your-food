@@ -21,8 +21,8 @@ namespace ShareYourFood
         public MapPage()
         {
             InitializeComponent();
-            var position = new Position(19.673971, 20.079831);
 
+            var position = new Position(19.673971, 20.079831);
             map = new CustomMap(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
             {
                 WidthRequest = Application.Current.MainPage.Width,
@@ -38,6 +38,9 @@ namespace ShareYourFood
 
             GridLayout.Children.Add(map, 0, 1);
             Grid.SetColumnSpan(map, 3);
+
+            var menuButton = new ImageButton { Source = "menu_icon.png", BackgroundColor = Color.Transparent };
+            GridLayout.Children.Add(menuButton, 2, 0);
 
             GetLocation();
         }
