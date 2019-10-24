@@ -58,9 +58,8 @@ namespace ShareYourFood
 
         public async void GetLocation()
         {
-            var location = await Geolocation.GetLastKnownLocationAsync();
+            var location = await Geolocation.GetLocationAsync();
             var position = new Position(location.Latitude, location.Longitude);
-            Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
             map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(2.5)));
         }
     }
