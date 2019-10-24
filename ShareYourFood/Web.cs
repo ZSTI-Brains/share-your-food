@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 using Newtonsoft.Json;
 
 namespace ShareYourFood
@@ -29,9 +30,21 @@ namespace ShareYourFood
                 };
 
                 App.User = u;
-                App.Logged = true;
+                App.Logged = true;    
+            }
+        }
 
-                
+        public static async Task SignUp(string url, Dictionary<string, string> v)
+        {
+            await Post(url, v);
+            var msg = JsonConvert.DeserializeObject<Dictionary<string, bool>>(responseString);
+
+            if (msg != null && IsSignUpOK(msg))
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new MainPage() 
+                {
+                    BindingContext = new MainPage()
+                });
             }
         }
 
@@ -47,6 +60,11 @@ namespace ShareYourFood
             var content = new FormUrlEncodedContent(v);
             var response = await client.PostAsync(url, content);
             responseString = await response.Content.ReadAsStringAsync();
+        }
+
+        private static bool IsSignUpOK(Dictionary<string, bool> v)
+        {
+            return v["first_name_correct"] && v["last_name_correct"] && v["email_correct"] && v["password_correct"];
         }
     }
 }

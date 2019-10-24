@@ -17,5 +17,21 @@ namespace ShareYourFood
             InitializeComponent();
             Title = "Rejestracja";
         }
+
+        async void OnSignUp(object sender, EventArgs e)
+        {
+            if (passwordEntry.Text != confirmPasswordEntry.Text)
+                return;
+
+            Dictionary<string, string> values = new Dictionary<string, string>
+            {
+                { "first_name", firstNameEntry.Text },
+                { "last_name", lastNameEntry.Text },
+                { "email", emailEntry.Text },
+                { "password", passwordEntry.Text }
+            };
+
+            await Web.SignUp(Web.API_URL + "sign-up.php", values);
+        }
     }
 }

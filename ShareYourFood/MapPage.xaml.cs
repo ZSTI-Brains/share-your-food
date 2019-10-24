@@ -40,6 +40,7 @@ namespace ShareYourFood
                     Padding = new Thickness(0, 14),
                     BackgroundColor = Color.Transparent
                 };
+                menuButton.Clicked += OnMenu;
                 GridLayout.Children.Add(menuButton, 2, 0);
             }
 
@@ -61,6 +62,11 @@ namespace ShareYourFood
             var location = await Geolocation.GetLocationAsync();
             var position = new Position(location.Latitude, location.Longitude);
             map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(2.5)));
+        }
+
+        async void OnMenu(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserPage() { BindingContext = new UserPage() });
         }
     }
 }
