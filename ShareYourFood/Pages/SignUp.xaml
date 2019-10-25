@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Style="{StaticResource DefaultPage}"
+             x:Class="ShareYourFood.SignUp">
+    <ContentPage.Content>
+        <ScrollView Padding="0,96">
+            <StackLayout Padding="48" VerticalOptions="Center">
+                <Entry x:Name="firstNameEntry" Placeholder="Imię" Style="{StaticResource Entry}" />
+                <Entry x:Name="lastNameEntry" Placeholder="Nazwisko" Style="{StaticResource Entry}" />
+                <Entry x:Name="passwordEntry" Placeholder="Hasło" IsPassword="True" Style="{StaticResource Entry}" />
+                <Entry x:Name="confirmPasswordEntry" Placeholder="Potwierdź hasło" IsPassword="True" Style="{StaticResource Entry}" />
+                <Entry x:Name="emailEntry" Placeholder="E-mail" Style="{StaticResource Entry}" />
+                <Entry x:Name="confirmEmailEntry" Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Entry Placeholder="Potwierdź e-mail" Style="{StaticResource Entry}" />
+                <Button Text="Zarejestruj się"
+                        Clicked="OnSignUp"
+                        Margin="0,32,0,0"
+                        Style="{StaticResource Button}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

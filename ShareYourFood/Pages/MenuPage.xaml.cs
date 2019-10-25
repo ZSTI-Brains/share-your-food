@@ -10,16 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace ShareYourFood
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserPage : ContentPage
+    public partial class MenuPage : ContentPage
     {
-        public UserPage()
+        public MenuPage()
         {
             InitializeComponent();
 
-            string name = App.User.FirstName + " " + App.User.LastName;
-            nameLabel.Text = "Witaj, " + name + "!";
+            nameLabel.Text = App.User.FirstName + " " + App.User.LastName;
             emailLabel.Text = App.User.Email;
-            pointsLabel.Text = App.User.Points.ToString();
+            pointsLabel.Text = "Posiadasz: " + App.User.Points.ToString() + " punktów";
         }
     }
 }

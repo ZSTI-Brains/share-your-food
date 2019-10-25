@@ -7,7 +7,7 @@
              Style="{StaticResource DefaultPage}"
              x:Class="ShareYourFood.SignIn">
     <ContentPage.Content>
-        <StackLayout Padding="48,48,48,48" VerticalOptions="Center">
+        <StackLayout Padding="48" VerticalOptions="Center">
             <Entry x:Name="emailEntry" 
                    Placeholder="E-mail" 
                    Style="{StaticResource Entry}" />

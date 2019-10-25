@@ -13,25 +13,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="SignUp.xaml.cs">
+    <Compile Update="Pages\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
-    <Compile Update="SignIn.xaml.cs">
+    <Compile Update="Pages\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MapPage.xaml">
+    <EmbeddedResource Update="Pages\MapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SignUp.xaml">
+    <EmbeddedResource Update="Pages\SignUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SignIn.xaml">
+    <EmbeddedResource Update="Pages\SignIn.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UserPage.xaml">
+    <EmbeddedResource Update="Pages\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UserDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

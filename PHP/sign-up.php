@@ -38,9 +38,10 @@
     }
 
     function checkEmail($email) {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL))
-            return true;
-        return false;
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false)
+			return false;
+
+		return true;
     }
 
     $query = "SELECT * FROM `users` WHERE `email` = '$email'";
@@ -57,7 +58,6 @@
             $query = "INSERT INTO `users`(`first_name`, `last_name`, `password`, `email`, `points`) 
 					  VALUES ('$first_name', '$last_name', '$passwd', '$email', 0)";
             $mysqli->query($query);
-            echo "Account created successful!";
         }
     }
 

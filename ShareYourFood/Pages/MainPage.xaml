@@ -7,7 +7,7 @@
              Style="{StaticResource DefaultPage}"
              x:Class="ShareYourFood.MainPage">
 
-    <StackLayout Padding="48,48,48,48" VerticalOptions="Center">
+    <StackLayout Padding="48" VerticalOptions="Center">
         <Image Source="logotype.png" HeightRequest="128" Margin="0,0,0,48" />
         <Button Text="Logowanie" Clicked="SignIn" Style="{StaticResource Button}" />
         <Button Text="Rejestracja" Clicked="SignUp" Style="{StaticResource Button}" />

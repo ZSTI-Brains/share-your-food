@@ -22,7 +22,7 @@ namespace ShareYourFood
         {
             InitializeComponent();
 
-            var position = new Position(19.673971, 20.079831);
+            var position = new Position(49.673971, 20.079831);
             map = new CustomMap(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.5f)))
             {
                 WidthRequest = Application.Current.MainPage.Width,
@@ -32,12 +32,13 @@ namespace ShareYourFood
             GridLayout.Children.Add(map, 0, 1);
             Grid.SetColumnSpan(map, 3);
 
+            App.Logged = true;
             if (App.Logged)
             {
                 var menuButton = new ImageButton
                 {
                     Source = "menu_icon.png",
-                    Padding = new Thickness(0, 14),
+                    Padding = new Thickness(0, 18),
                     BackgroundColor = Color.Transparent
                 };
                 menuButton.Clicked += OnMenu;
@@ -59,14 +60,14 @@ namespace ShareYourFood
 
         public async void GetLocation()
         {
-            var location = await Geolocation.GetLocationAsync();
+            var location = await Geolocation.GetLastKnownLocationAsync();
             var position = new Position(location.Latitude, location.Longitude);
             map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(2.5)));
         }
 
         async void OnMenu(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new UserPage() { BindingContext = new UserPage() });
+            await Navigation.PushAsync(new MenuPage() { BindingContext = new MenuPage() });
         }
     }
 }

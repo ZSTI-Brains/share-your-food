@@ -21,8 +21,7 @@ namespace ShareYourFood
             FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
             MainPage = new NavigationPage(new MainPage());
             Web.GetHousesInfo("https://szaredko.com/share-your-food/get-eating-houses-info.php");
-        }
-        
+        }      
 
         protected override void OnStart()
         {
