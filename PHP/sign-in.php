@@ -15,7 +15,7 @@
         $row = $result->fetch_assoc();
 
         if (password_verify($passwd, $row["password"])) {
-            $query = "SELECT first_name, last_name, email, points FROM `users` WHERE `email` = '$email'";
+            $query = "SELECT first_name, last_name, email, password, points FROM `users` WHERE `email` = '$email'";
             $result = $mysqli->query($query);
             $row = $result->fetch_assoc();
             echo json_encode($row);

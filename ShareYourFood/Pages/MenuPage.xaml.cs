@@ -20,5 +20,10 @@ namespace ShareYourFood
             emailLabel.Text = App.User.Email;
             pointsLabel.Text = "Posiadasz: " + App.User.Points.ToString() + " punktów";
         }
+
+        async void OpenUserDetails(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDetailsPage { BindingContext = new UserDetailsPage() });
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace ShareYourFood
                     FirstName   = msg["first_name"],
                     LastName    = msg["last_name"],
                     Email       = msg["email"],
+                    Password    = msg["password"],
                     Points      = int.Parse(msg["points"])
                 };
 
@@ -38,7 +39,7 @@ namespace ShareYourFood
         {
             await Post(url, v);
             var msg = JsonConvert.DeserializeObject<Dictionary<string, bool>>(responseString);
-            Console.WriteLine(responseString);
+
             if (msg != null && IsSignUpOK(msg))
             {
                 await Application.Current.MainPage.Navigation.PushAsync(new MainPage() 

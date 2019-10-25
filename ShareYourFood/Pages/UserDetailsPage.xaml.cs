@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ShareYourFood.Pages
+namespace ShareYourFood
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserDetailsPage : ContentPage
