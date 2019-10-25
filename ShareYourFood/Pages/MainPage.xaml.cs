@@ -22,6 +22,12 @@ namespace ShareYourFood
             Title = "Ekran powitalny";
         }
 
+        protected override void OnAppearing()
+        {
+            if (App.Logged)
+                App.GoToMapPage();
+        }
+
         async void SignIn(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SignIn

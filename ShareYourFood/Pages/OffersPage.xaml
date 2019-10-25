@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Style="{StaticResource DefaultPage}"
+             x:Class="ShareYourFood.OffersPage">
+    <ContentPage.Content>
+        <StackLayout Padding="24,48">
+            <Label Text="Dostępne kupony"
+                   TextColor="#333333"
+                   FontFamily="{StaticResource DefaultExtraBold}"
+                   FontSize="22" 
+                   HorizontalTextAlignment="Center" />
+            <ScrollView Margin="0,24,0,0">
+                <StackLayout x:Name="OffersLayout">
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

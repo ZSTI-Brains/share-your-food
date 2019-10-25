@@ -13,15 +13,29 @@ namespace ShareYourFood
         public static string FolderPath { get; private set; }
         public static User User { get; set; }
         public static IList<EatingHouse> EatingHouses { get; set; }
+        public static IList<ProductOffer> ProductOffers { get; set; }
 
         public App()
         {
             InitializeComponent();
+
             Logged = false;
             FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
             MainPage = new NavigationPage(new MainPage());
-            Web.GetHousesInfo("https://szaredko.com/share-your-food/get-eating-houses-info.php");
-        }      
+
+            Web.GetHousesInfo(Web.API_URL + "get-eating-houses-info.php");
+            Web.GetProductOffers(Web.API_URL + "get-product-offers.php");
+        }
+
+        public static async void GoToPreviousPage()
+        {
+            await Current.MainPage.Navigation.PopAsync();
+        }
+
+        public static async void GoToMapPage()
+        {
+            await Current.MainPage.Navigation.PushAsync(new MapPage { BindingContext = new MapPage() });
+        }
 
         protected override void OnStart()
         {

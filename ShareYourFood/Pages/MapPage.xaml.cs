@@ -18,6 +18,8 @@ namespace ShareYourFood
     {
         public Xamarin.Forms.Maps.Map map;
 
+        private ImageButton menuButton;
+
         public MapPage()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace ShareYourFood
             App.Logged = true;
             if (App.Logged)
             {
-                var menuButton = new ImageButton
+                menuButton = new ImageButton
                 {
                     Source = "menu_icon.png",
                     Padding = new Thickness(0, 18),
@@ -46,6 +48,17 @@ namespace ShareYourFood
             }
 
             GetLocation();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (!App.Logged && menuButton != null)
+            {
+                GridLayout.Children.Remove(menuButton);
+                menuButton = null;
+            }
         }
 
         public void InitPins()

@@ -56,6 +56,13 @@ namespace ShareYourFood
             App.EatingHouses = JsonConvert.DeserializeObject<IList<EatingHouse>>(responseString);
         }
 
+        public async static void GetProductOffers(string url)
+        {
+            var response = await client.GetAsync(url);
+            var responseString = await response.Content.ReadAsStringAsync();
+            App.ProductOffers = JsonConvert.DeserializeObject<IList<ProductOffer>>(responseString);
+        }
+
         public async static Task Post(string url, Dictionary<string, string> v)
         {
             var content = new FormUrlEncodedContent(v);

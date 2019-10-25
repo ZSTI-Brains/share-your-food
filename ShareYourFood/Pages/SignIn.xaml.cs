@@ -21,6 +21,12 @@ namespace ShareYourFood
             Title = "Logowanie";
         }
 
+        protected override void OnAppearing()
+        {
+            if (App.Logged)
+                App.GoToMapPage();
+        }
+
         async void OnSignIn(object sender, EventArgs e)
         {
             Dictionary<string, string> values = new Dictionary<string, string>

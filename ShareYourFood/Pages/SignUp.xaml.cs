@@ -18,6 +18,12 @@ namespace ShareYourFood
             Title = "Rejestracja";
         }
 
+        protected override void OnAppearing()
+        {
+            if (App.Logged)
+                App.GoToMapPage();
+        }
+
         async void OnSignUp(object sender, EventArgs e)
         {
             if (passwordEntry.Text != confirmPasswordEntry.Text)

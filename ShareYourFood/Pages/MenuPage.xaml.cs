@@ -21,9 +21,28 @@ namespace ShareYourFood
             pointsLabel.Text = "Posiadasz: " + App.User.Points.ToString() + " punktów";
         }
 
+        protected override void OnAppearing()
+        {
+            if (!App.Logged)
+                App.GoToPreviousPage();
+        }
+
+        async void OpenProductOffers(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OffersPage { BindingContext = new OffersPage() });
+        }
+
         async void OpenUserDetails(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserDetailsPage { BindingContext = new UserDetailsPage() });
+        }
+
+        async void Logout(object sender, EventArgs e)
+        {
+            App.Logged = false;
+            App.User = new User();
+
+            await Navigation.PushAsync(new MainPage { BindingContext = new MainPage() });
         }
     }
 }

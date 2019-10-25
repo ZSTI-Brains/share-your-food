@@ -24,8 +24,9 @@
                 <Label x:Name="pointsLabel" Style="{StaticResource UserLabel}" />
             </StackLayout>
             <StackLayout Grid.Row="1" Grid.Column="0" Padding="64,0" VerticalOptions="Center">
-                <Button Text="Wymień punkty" Style="{StaticResource Button}" />
-                <Button Text="Zmień swoje dane" Clicked="OpenUserDetails" Style="{StaticResource Button}" />
+                <Button Text="Wymień punkty" Clicked="OpenProductOffers" Style="{StaticResource Button}" />
+                <Button Text="Zmień swoje dane" BackgroundColor="#333333" Style="{StaticResource Button}" />
+                <Button Text="Wyloguj się" Clicked="Logout" Style="{StaticResource Button}" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>
