@@ -1,4 +1,4 @@
-﻿# [EN] Share Your Food - a mobile application made with Xamarin.Forms (Android)
+# [EN] Share Your Food - a mobile application made with Xamarin.Forms (Android)
 <br>
 ### User details:
 Email: s.wokulski@gmail.com
