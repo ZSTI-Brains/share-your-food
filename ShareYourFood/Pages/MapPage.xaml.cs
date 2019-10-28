@@ -33,8 +33,7 @@ namespace ShareYourFood
             InitPins();       
             GridLayout.Children.Add(map, 0, 1);
             Grid.SetColumnSpan(map, 3);
-
-            App.Logged = true;
+            
             if (App.Logged)
             {
                 menuButton = new ImageButton
